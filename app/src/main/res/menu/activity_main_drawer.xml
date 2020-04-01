@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_prevention"
+            android:icon="@drawable/ic_prevention"
+            android:title="Prevention" />
+        <item
+            android:id="@+id/nave_symptoms"
+            android:icon="@drawable/ic_flu"
+            android:title="Symptoms" />
+        <item
+            android:id="@+id/nav_precautions"
+            android:icon="@drawable/ic_precautions"
+            android:title="Precautions" />
+        <item
+            android:id="@+id/nav_self_test"
+            android:icon="@drawable/ic_diagnosis"
+            android:title="Self Test" />
+
+        <item
+            android:id="@+id/nav_knowledge"
+            android:icon="@drawable/ic_idea"
+            android:title="Knowledge Base" />
+
+        <item
+            android:id="@+id/nav_facts"
+            android:icon="@drawable/ic_questions"
+            android:title="Myths &amp; Facts" />
+
+        <item
+            android:id="@+id/nav_treatments"
+            android:icon="@drawable/ic_treatment"
+            android:title="Treatments" />
+
+        <item
+            android:id="@+id/nav_dosdonts"
+            android:icon="@drawable/ic_therapist"
+            android:title="Do's &amp; Don'ts" />
+
+
+    </group>
+
+
+
+</menu>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".PreDetailsActivity"
+    tools:showIn="@layout/activity_pre_details">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#81c100"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvMealID"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/calibri"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Like"/>
+
+            <ImageView
+                android:alpha="0.8"
+                android:id="@+id/thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:tint="@color/white"
+                android:scaleType="fitXY"
+                android:background="@drawable/roundimage"
+                />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#b9dd1e"
+                android:padding="10dp"
+                android:text="Iron Man"
+                android:layout_marginLeft="2dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/calibri"
+                android:textColor="@color/white"
+                />
+
+            <LinearLayout
+                android:animateLayoutChanges="true"
+                android:id="@+id/linearLayout"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_margin="5dp"
+                    android:visibility="visible"
+                    android:id="@+id/tvDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/calibri"
+                    android:textColor="@color/white"
+                    android:text="2020-03-27"
+                    android:padding="10dp"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

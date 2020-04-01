@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="170dp"
+    android:layout_height="180dp"
+    android:background="@drawable/shadows"
+    android:clickable="true"
+    android:paddingBottom="@dimen/row_padding"
+    android:id="@+id/ll_item"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+    android:layout_margin="5dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/wandery"
+            android:textColor="#f7c622"
+            android:text="Streetwise 2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTitle"
+            android:fontFamily="@font/calibri"
+            android:text="Burgers Meal"
+            android:textColor="#f7c622"
+            android:textSize="12sp" />
+
+
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="right">
+
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="@dimen/row_padding" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>
