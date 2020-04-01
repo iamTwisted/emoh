@@ -163,7 +163,6 @@ public class MainActivity extends AppCompatActivity
                 //Add to Cart
                 finish();
                 startActivity(new Intent(getApplicationContext(), FactsActivity.class));
-
             }
         });
 
