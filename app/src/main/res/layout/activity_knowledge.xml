@@ -10,7 +10,7 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#CCFF3847"
+        android:background="@color/background"
         android:theme="@style/AppTheme.AppBarOverlay"
         app:elevation="0dp">
 
@@ -26,10 +26,12 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:id="@+id/btnBack"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="10dp"
                     android:padding="10dp"
-                    android:tint="@color/white1"
+                    android:tint="@color/yellow"
                     android:src="@drawable/ic_035_go_back_left_arrow" />
 
                 <TextView
@@ -41,14 +43,16 @@
                     android:layout_marginStart="36dp"
                     android:text="Knowledge Base 'Coronavirus'"
                     android:textAllCaps="true"
-                    android:layout_marginTop="8dp"
-                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/yellow"
                     android:textSize="12sp"
                     android:textStyle="bold"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="46dp" />
+                    android:layout_marginLeft="16dp" />
 
-                <ImageView
+                <!--<ImageView
                     android:id="@+id/btnRecon"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
@@ -60,7 +64,7 @@
                     android:tint="@color/white"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="27dp" />
-
+-->
 
 
 

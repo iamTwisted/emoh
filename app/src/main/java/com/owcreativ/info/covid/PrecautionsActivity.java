@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -45,6 +46,13 @@ public class PrecautionsActivity extends AppCompatActivity {
         rvPrecautions.setLayoutManager(new GridLayoutManager(PrecautionsActivity.this,2));
 
         getServerData();
+        findViewById(R.id.btnBack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Add to Cart
+                onBackPressed();
+            }
+        });
 
 
         // ArrayList<PromoData> rvdata = getData();

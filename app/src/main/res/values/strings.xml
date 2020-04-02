@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EMOH</string>
+    <string name="app_name">emoh</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -12,6 +12,10 @@
     <string name="next">NEXT</string>
     <string name="skip">SKIP</string>
     <string name="start">GOT IT</string>
+
+    <string name="text_hint"><b>Search Latest News...</b></string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
 
     <string name="slide_1_title">Stay Updated!</string>
     <string name="slide_1_desc">The Ministry of Health System is well prepared for this outbreak. Our infectious disease specialists are trained and equipped to care for patients with complex diseases such as COVID-19.!</string>

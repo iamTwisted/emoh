@@ -1,6 +1,9 @@
 package com.owcreativ.info.covid;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -65,12 +68,13 @@ public class PrecautionsListAdapter extends RecyclerView.Adapter<PrecautionsList
             @Override
             public void onClick(View view) {
 
-//                Context context = view.getContext();
-//                Intent intent = new Intent(context, MealViewActivity.class);
-//                Bundle b = new Bundle();
-//                b.putInt("meal", promoData.getId()); //Your id
-//                intent.putExtras(b); //Put your id to your next Intent
-//                context.startActivity(intent);
+                Context context = view.getContext();
+                Intent intent = new Intent(context, PreDetailsActivity.class);
+                Bundle b = new Bundle();
+                b.putInt("id", precautionData.getId()); //Your id
+                intent.putExtras(b); //Put your id to your next Intent
+                context.startActivity(intent);
+                ((Activity)context).finish();
 
 
             }

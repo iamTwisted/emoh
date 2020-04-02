@@ -26,7 +26,7 @@
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swiperefresh"
         android:layout_width="match_parent"
-        android:layout_height="350dp" >
+        android:layout_height="450dp" >
 
 
         <android.support.v7.widget.RecyclerView

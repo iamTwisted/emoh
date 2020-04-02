@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigationMenu"
+        android:icon="@drawable/ic_avoid_dont_wet_mask"
+        android:title="Safety" />
+    <item
+        android:id="@+id/navigationSearch"
+        android:icon="@drawable/ic_fever_sick_temperature_termometer"
+        android:title="Symptoms" />
+    <item
+        android:id="@+id/navigationHome"
+        android:icon="@drawable/ic_diagnosis"
+        android:title="Checkup" />
+    <item
+        android:id="@+id/navigationMyCourses"
+        android:icon="@drawable/ic_questions"
+        android:title="Questions" />
+    <item
+        android:id="@+id/navigationMyProfile"
+        android:icon="@drawable/ic_idea"
+        android:title="Facts" />
+
+</menu>

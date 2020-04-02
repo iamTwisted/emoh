@@ -3,8 +3,12 @@ package com.owcreativ.info.covid;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
@@ -41,6 +45,33 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private BottomNavigationView bottomNavigationView;
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment;
+            switch (item.getItemId()) {
+                case R.id.navigationMyProfile:
+
+                    return true;
+                case R.id.navigationMyCourses:
+                    return true;
+                case R.id.navigationHome:
+                    return true;
+                case  R.id.navigationSearch:
+                    return true;
+                case  R.id.navigationMenu:
+                    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                    drawer.openDrawer(GravityCompat.START);
+                    return true;
+            }
+            return false;
+        }
+    };
+
     //DEFINING GETTING PRECAUTIONS DATA TOOLS
     ArrayList<PrecautionData> proSearch = new ArrayList<PrecautionData>();
     RecyclerView rvPrecautions;
@@ -54,6 +85,10 @@ public class MainActivity extends AppCompatActivity
     ArrayList<CategoriesData> proSearch_3 = new ArrayList<CategoriesData>();
     RecyclerView rvCategories;
     CategoriesAdapter categoriesAdapter;
+
+    ArrayList<NewsData> proSearch_4 = new ArrayList<NewsData>();
+    RecyclerView rvNews;
+    UpdatesAdapter newsAdapter;
 
 
     private static ViewPager mPager;
@@ -74,7 +109,7 @@ public class MainActivity extends AppCompatActivity
 
 
         TextView tv = (TextView) findViewById(R.id.title);
-        TextView tv_1 = (TextView) findViewById(R.id.categoriesTitle);
+//        TextView tv_1 = (TextView) findViewById(R.id.categoriesTitle);
         TextView tv_2 = (TextView) findViewById(R.id.precautionsTitle);
         TextView tv_3 = (TextView) findViewById(R.id.symptomsTitle);
 //        Typeface face = Typeface.createFromAsset(getAssets(),
@@ -85,7 +120,7 @@ public class MainActivity extends AppCompatActivity
         //or to support all versions use
         Typeface typeface = ResourcesCompat.getFont(MainActivity.this, R.font.wandery);
         tv.setTypeface(typeface);
-        tv_1.setTypeface(typeface);
+//        tv_1.setTypeface(typeface);
         tv_2.setTypeface(typeface);
         tv_3.setTypeface(typeface);
 
@@ -98,6 +133,14 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
+        bottomNavigationView = findViewById(R.id.navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+//
+        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottomNavigationView.getLayoutParams();
+        layoutParams.setBehavior(new BottomNavigationBehavior());
+
+        bottomNavigationView.setSelectedItemId(R.id.navigationHome);
 
 
         rvPrecautions = findViewById(R.id.recycler);
@@ -118,6 +161,15 @@ public class MainActivity extends AppCompatActivity
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
         rvCategories.setLayoutManager(layoutManager);
         getServerData_3();
+
+
+        // ArrayList<PromoData> rvdata = getData();
+        rvNews = findViewById(R.id.recycler_0);
+        rvNews.setHasFixedSize(true);
+        LinearLayoutManager layoutManager2 = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL,false);
+        rvNews.setLayoutManager(layoutManager2);
+        getServerData_0();
+
 
         // ArrayList<PromoData> rvdata = getData();
 //        rvTechSolPoint = findViewById(R.id.recycler);
@@ -168,6 +220,39 @@ public class MainActivity extends AppCompatActivity
 
 
     }
+
+    private void getServerData_0() {
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URLs.GET_UPDATES, (JSONObject) null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        System.out.println(response);
+                        try {
+                            Gson gson = new Gson();
+                            JSONArray jsonArray = response.getJSONArray("news");
+                            for (int p=0; p<jsonArray.length(); p++){
+                                JSONObject jsonObject = jsonArray.getJSONObject(p);
+                                NewsData promoData = gson.fromJson(String.valueOf(jsonObject), NewsData.class);
+                                proSearch_4.add(promoData);
+                            }
+                            newsAdapter = new UpdatesAdapter(getApplicationContext(), proSearch_4);
+                            rvNews.setAdapter(newsAdapter);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.println(error.toString());
+                    }
+                });
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(jsonObjectRequest);
+    }
+
 
     private void getServerData() {
 
@@ -329,6 +414,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(getApplicationContext(), KnowledgeActivity.class));
 
         } else if (id == R.id.nav_facts) {
+
+            finish();
+            startActivity(new Intent(getApplicationContext(), FactsActivity.class));
 
         }else if (id == R.id.nav_treatments) {
 

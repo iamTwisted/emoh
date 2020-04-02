@@ -17,6 +17,7 @@ public class URLs {
     public static final String CATEGORIES = ROOT_URL_2 +"getCategories.php";
     public static final String GET_PRECAUTIONS = ROOT_URL_2 +"getPrecautions.php";
     public static final String GET_NEWS = ROOT_URL_2 +"getNews.php";
+    public static final String GET_UPDATES = ROOT_URL_2 +"getUpdates.php";
     public static final String NEWS = ROOT_URL_2 +"news.php";
     public static final String GET_FACTS = ROOT_URL_2 +"getFacts.php";
     public static final String GET_KNOWLDGE = ROOT_URL_2 +"knowledge.php";

@@ -2,6 +2,7 @@ package com.owcreativ.info.covid;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -46,7 +47,7 @@ public class SignsAdapter extends RecyclerView.Adapter<SignsAdapter.RvViewHolder
         String imgUrl = signsData.getImage();
 
 
-        //get first letter of each String item
+ /*       //get first letter of each String item
         String firstLetter = String.valueOf(signsData.getName().charAt(0));
 
         ColorGenerator generator = ColorGenerator.MATERIAL; // or use DEFAULT
@@ -57,7 +58,21 @@ public class SignsAdapter extends RecyclerView.Adapter<SignsAdapter.RvViewHolder
                 .buildRect(firstLetter, color);
 //                .buildRound(firstLetter, color); // radius in px
 
-        holder.thumbnail.setImageDrawable(drawable);
+        holder.thumbnail.setImageDrawable(drawable);*/
+
+        ColorGenerator generator = ColorGenerator.MATERIAL; // or use DEFAULT
+        // generate random color
+        int color = generator.getRandomColor();
+
+        Glide.with(context).load(signsData.getImage())
+                .thumbnail(0.5f)
+                .crossFade()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(holder.thumbnail);
+
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            holder.thumbnail.setColorFilter(context.getColor(color));
+//        }
 
 
         // With thumbnail url

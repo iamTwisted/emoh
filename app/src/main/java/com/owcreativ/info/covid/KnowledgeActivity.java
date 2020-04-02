@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -39,6 +40,14 @@ public class KnowledgeActivity extends AppCompatActivity {
         knowledgeDataList = new ArrayList<>();
 
         loadKnowledgebaseInfo();
+
+        findViewById(R.id.btnBack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Add to Cart
+               onBackPressed();
+            }
+        });
     }
 
     private void loadKnowledgebaseInfo() {

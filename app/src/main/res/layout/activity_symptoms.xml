@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SymptomsActivity">
-
+    tools:context="com.owcreativ.info.covid.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/twilight"
-        android:gravity="center"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:background="@color/background"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
 
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
+            android:background="@color/background"
             android:gravity="center"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
@@ -30,4 +29,4 @@
         android:id="@+id/include"
         layout="@layout/content_symptoms" />
 
-</android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>
