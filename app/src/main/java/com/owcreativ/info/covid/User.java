@@ -6,15 +6,14 @@ package com.owcreativ.info.covid;
 public class User {
 
     private int id;
-    private String username, phone, town,location,coordinates;
+    private String username, phone, town,location;
 
-    public User(int id, String username, String phone, String town, String location, String coordinates) {
+    public User(int id, String username, String phone, String town, String location) {
         this.id = id;
         this.username = username;
         this.phone = phone;
         this.town = town;
         this.location = location;
-        this.coordinates = coordinates;
     }
 
     public int getId() {
@@ -37,7 +36,4 @@ public class User {
         return location;
     }
 
-    public String getCoordinates() {
-        return coordinates;
-    }
 }

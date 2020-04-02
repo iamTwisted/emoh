@@ -95,12 +95,17 @@
     <style name="parent">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:bottomDark">@color/colorPrimaryDark</item>
         <item name="android:textColor">@color/black</item>
+        <item name="boxStrokeColor">@color/background</item>
+        <item name="boxStrokeWidth">2dp</item>
     </style>
 
     <style name="modifiedEditText" parent="parent">
         <item name="android:textSize">@dimen/newsMoreTextSize</item>
-<!--        <item name="android:backgroundTint">@color/yellow</item>-->
+        <item name="android:textColor">@color/black</item>
+        <item name="boxStrokeColor">@color/background</item>
+        <item name="boxStrokeWidth">2dp</item>
     </style>
 
     <style name="loginButton" parent="viewParent">

@@ -18,7 +18,6 @@ public class SharedPrefManager {
     private static final String KEY_PHONE = "keyphone";
     private static final String KEY_TOWN = "keytown";
     private static final String KEY_LOCATION = "keylocation";
-    private static final String KEY_COORDINATES = "keycoordinates";
     private static final String KEY_ID = "keyid";
 
     private static SharedPrefManager mInstance;
@@ -45,7 +44,6 @@ public class SharedPrefManager {
         editor.putString(KEY_PHONE, user.getPhone());
         editor.putString(KEY_TOWN, user.getTown());
         editor.putString(KEY_LOCATION, user.getLocation());
-        editor.putString(KEY_COORDINATES, user.getCoordinates());
         editor.apply();
     }
 
@@ -63,17 +61,16 @@ public class SharedPrefManager {
                 sharedPreferences.getString(KEY_USERNAME, null),
                 sharedPreferences.getString(KEY_PHONE, null),
                 sharedPreferences.getString(KEY_TOWN, null),
-                sharedPreferences.getString(KEY_LOCATION, null),
-                sharedPreferences.getString(KEY_COORDINATES, null)
+                sharedPreferences.getString(KEY_LOCATION, null)
         );
     }
 
-    //this method will logout the user
-//    public void logout() {
-//        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-//        SharedPreferences.Editor editor = sharedPreferences.edit();
-//        editor.clear();
-//        editor.apply();
-//        mCtx.startActivity(new Intent(mCtx, LoginActivity.class));
-//    }
+//    this method will logout the user
+    public void logout() {
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+        mCtx.startActivity(new Intent(mCtx, LoginActivity.class));
+    }
 }

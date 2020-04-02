@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity
             Fragment fragment;
             switch (item.getItemId()) {
                 case R.id.navigationMyProfile:
-
                     return true;
                 case R.id.navigationMyCourses:
                     return true;
@@ -422,6 +421,9 @@ public class MainActivity extends AppCompatActivity
 
         }else if (id == R.id.nav_dosdonts) {
 
+        }else if (id == R.id.nav_logout) {
+            finish();
+            SharedPrefManager.getInstance(getApplicationContext()).logout();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

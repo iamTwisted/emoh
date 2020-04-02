@@ -2,8 +2,8 @@ package com.owcreativ.info.covid;
 
 public class URLs {
 
-    private static final String ROOT_URL = "http://covid.marginelectrosec.com/api/api.php?apicall=";
-    private static final String ROOT_URL_2 = "http://covid.marginelectrosec.com/api/";
+    private static final String ROOT_URL = "https://covid.marginelectrosec.com/api/api.php?apicall=";
+    private static final String ROOT_URL_2 = "https://covid.marginelectrosec.com/api/";
 
     public static final String URL_REGISTER = ROOT_URL + "signup";
     public static final String URL_LOGIN= ROOT_URL + "login";

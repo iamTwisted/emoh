@@ -41,6 +41,11 @@
             android:icon="@drawable/ic_therapist"
             android:title="Do's &amp; Don'ts" />
 
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_037_power"
+            android:title="Logout" />
+
 
     </group>
 
